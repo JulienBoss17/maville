@@ -1,0 +1,223 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Ma Ville en une page : quartiers, adresses locales, inspirations, carte interactive et idees de sortie."
+    />
+    <title>Ma Ville | Guide local</title>
+    <link rel="dns-prefetch" href="//images.unsplash.com" />
+    <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+    <link rel="dns-prefetch" href="//www.openstreetmap.org" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="scroll-progress" aria-hidden="true">
+      <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+    </div>
+    <div class="noise" aria-hidden="true"></div>
+    <div class="glow glow-a" aria-hidden="true"></div>
+    <div class="glow glow-b" aria-hidden="true"></div>
+
+    <header class="hero" id="top">
+      <nav class="top-nav container">
+        <a href="#top" class="brand">Ma Ville</a>
+        <div class="nav-links">
+          <a href="#ville">Ville</a>
+          <a href="#chiffres">Chiffres</a>
+          <a href="#commercants">Commerçants</a>
+          <a href="#galerie">Ambiance</a>
+          <a href="#map">Carte</a>
+          <a href="#agenda">Agenda</a>
+        </div>
+      </nav>
+
+      <div class="container hero-grid">
+        <div class="hero-content reveal">
+          <p class="kicker">Edition locale</p>
+          <h1>Ma Ville, vive et lumineuse</h1>
+          <p class="lead">
+            Entre patrimoine, adresses inspirées et promenades à pied, ce guide
+            rassemble l'essence d'une journee réussie.
+          </p>
+          <div class="hero-actions">
+            <a class="btn" href="#commercants">Explorer les adresses</a>
+            <a class="btn btn-outline" href="#map">Voir la carte</a>
+          </div>
+        </div>
+
+        <aside class="hero-panel reveal" aria-label="Temps fort du jour">
+          <p class="panel-kicker">Temps fort</p>
+          <h2>Parcours du samedi</h2>
+          <ul>
+            <li>Marche matinal et café sur la place</li>
+            <li>Pause déjeuner dans les rues animées</li>
+            <li>Balade douce en fin de journée</li>
+          </ul>
+          <a href="#agenda" class="panel-link">Voir le programme</a>
+        </aside>
+      </div>
+    </header>
+
+    <main>
+      <section class="section container" id="ville">
+        <div class="city-layout reveal">
+          <div class="city-intro">
+            <p class="kicker">Identité de la ville</p>
+            <h2>Un centre plein de contrastes</h2>
+            <p>
+              Ruelles pietonnes, places ouvertes, devantures colorées et recoins
+              calmes composent une ville à la fois douce et active.
+            </p>
+            <div class="city-tags">
+              <span>Terrasses</span>
+              <span>Patrimoine</span>
+              <span>Culture</span>
+              <span>Balades</span>
+            </div>
+          </div>
+          <div class="city-photo" role="img" aria-label="Perspective urbaine de Ma Ville"></div>
+        </div>
+      </section>
+
+      <section class="section alt" id="chiffres">
+        <div class="container reveal">
+          <div class="section-head">
+            <p class="kicker">Repère rapide</p>
+            <h2>Ma Ville en chiffres</h2>
+          </div>
+          <div class="stats-grid">
+            <article class="stat-card">
+              <p class="stat-number" data-value="28">0</p>
+              <p class="stat-label">adresses de proximité</p>
+            </article>
+            <article class="stat-card">
+              <p class="stat-number" data-value="7">0</p>
+              <p class="stat-label">places et parcs</p>
+            </article>
+            <article class="stat-card">
+              <p class="stat-number" data-value="14">0</p>
+              <p class="stat-label">événements mensuels</p>
+            </article>
+            <article class="stat-card">
+              <p class="stat-number" data-value="100">0</p>
+              <p class="stat-label">énergie locale</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="commercants">
+        <div class="container reveal">
+          <div class="section-head">
+            <p class="kicker">Carnet d'adresses imaginées</p>
+            <h2>Commercants à découvrir</h2>
+            <p class="section-note">
+              Une sélection éditoriale pour restituer l'atmosphere commercante de Ma Ville.
+            </p>
+          </div>
+          <div class="merchant-grid" id="merchantGrid"></div>
+        </div>
+      </section>
+
+      <section class="section alt" id="galerie">
+        <div class="container reveal">
+          <div class="section-head">
+            <p class="kicker">Scènes du quotidien</p>
+            <h2>Ambiances de Ma Ville</h2>
+          </div>
+          <div class="gallery-grid" id="galleryGrid"></div>
+        </div>
+      </section>
+
+      <section class="section container" id="map">
+        <div class="map-layout reveal">
+          <div>
+            <div class="section-head">
+              <p class="kicker">Se repérer</p>
+              <h2>Carte de Ma Ville</h2>
+            </div>
+            <div class="map-wrap">
+              <iframe
+                title="Carte de Ma Ville"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=-0.7705%2C46.0884%2C-0.7365%2C46.1229&layer=mapnik&marker=46.1085%2C-0.7514"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+          <aside class="map-aside">
+            <h3>Points d'intérêt</h3>
+            <p>Un parcours compact pour découvrir la ville sans voiture.</p>
+            <ul>
+              <li>Place principale et terrasses</li>
+              <li>Rue des commerces indépendants et vitrines locales</li>
+              <li>Halles du marché couvert et produits frais</li>
+              <li>Jardin urbain et promenade ombragée</li>
+              <li>Parvis de l'église et cœur historique</li>
+              <li>Passage des ateliers créatifs</li>
+              <li>Esplanade pour concerts et événements</li>
+              <li>Point photo panorama en fin de journée</li>
+              <li>Boucle vélo vers les quartiers calmes</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section alt" id="agenda">
+        <div class="container reveal">
+          <div class="section-head">
+            <p class="kicker">Programme conseillé</p>
+            <h2>Une vraie journée type</h2>
+          </div>
+          <div class="timeline">
+            <article class="timeline-item">
+              <span>08:30</span>
+              <p>Cafe et viennoiserie au centre, puis tour du marché pour les produits locaux.</p>
+            </article>
+            <article class="timeline-item">
+              <span>10:15</span>
+              <p>Balade patrimoine: place historique, ruelles anciennes et arrêt photo sur le parvis.</p>
+            </article>
+            <article class="timeline-item">
+              <span>12:30</span>
+              <p>Déjeuner en terrasse, cuisine de saison, puis café dans la rue commercante.</p>
+            </article>
+            <article class="timeline-item">
+              <span>14:30</span>
+              <p>Pause au jardin urbain et visite des ateliers créatifs du quartier.</p>
+            </article>
+            <article class="timeline-item">
+              <span>17:00</span>
+              <p>Boucle à vélo le long des quartiers calmes et retour par l'esplanade.</p>
+            </article>
+            <article class="timeline-item">
+              <span>19:30</span>
+              <p>Dîner convivial puis promenade de soirée dans le centre éclairé.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-content">
+        <p class="footer-note">
+          Projet de démonstration pour le portfolio de Julien Bossaert - Photos libres via Unsplash et
+          carte OpenStreetMap.
+        </p>
+        <a class="footer-link" href="/mentions-legales.html">Mentions légales</a>
+      </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
